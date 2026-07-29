@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=JetBrains+Mono:wght@400;500;600&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0d0d0e;
+  --surface: #151516;
+  --surface-hover: #1a1a1c;
+  --border: rgba(255, 255, 255, 0.05);
+  --accent-muted: #9e8e7a;
+  --foreground: #e6e4df;
+  --foreground-muted: #8a8883;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Urbanist', system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2a2c;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f42;
+}
+
+/* Glassmorphism utility - Refined for "Vast Quiet" */
+.glass-panel {
+  background: rgba(21, 21, 22, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+}
+
+.glass-panel-hover {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-panel-hover:hover {
+  background: rgba(26, 26, 28, 0.8);
+  border-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+/* Markdown typography styles (Editorial Feel) */
+.prose {
+  color: var(--foreground);
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4 {
+  font-family: 'Bodoni Moda', serif;
+  color: #ffffff;
+  font-weight: 500;
+  margin-top: 2em;
+  margin-bottom: 0.8em;
+}
+
+.prose h1 {
+  font-size: 2.8rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.prose h2 {
+  font-size: 2rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.5rem;
+}
+
+.prose h3 { font-size: 1.5rem; }
+
+.prose p {
+  margin-bottom: 1.6em;
+  color: #c4c2bd;
+}
+
+.prose ul {
+  list-style-type: none;
+  padding-left: 1.2em;
+  margin-bottom: 1.6em;
+  color: #c4c2bd;
+}
+
+.prose ul li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--accent-muted);
+}
+
+.prose ul li {
+  position: relative;
+  padding-left: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.prose ol {
+  list-style-type: decimal;
+  padding-left: 1.6em;
+  margin-bottom: 1.6em;
+  color: #c4c2bd;
+}
+
+.prose li {
+  margin-bottom: 0.5em;
+}
+
+.prose blockquote {
+  border-left: 1px solid var(--accent-muted);
+  padding-left: 1.5rem;
+  font-style: italic;
+  color: var(--foreground-muted);
+  margin: 2em 0;
+}
+
+.prose code {
+  font-family: 'JetBrains Mono', monospace;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #d8d4cf;
+  padding: 0.2em 0.4em;
+  border-radius: 0.25rem;
+  font-size: 0.85em;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.prose pre {
+  font-family: 'JetBrains Mono', monospace;
+  background-color: #080809;
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin: 2em 0;
+}
+
+.prose pre code {
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  color: #c4c2bd;
+}
+
+.prose a {
+  color: var(--accent-muted);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.prose a:hover {
+  border-bottom-color: var(--accent-muted);
+}
+

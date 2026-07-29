@@ -1,0 +1,58 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum PostStatus {
+  draft
+  published
+}
+
+model User {
+  id            String    @id @default(uuid())
+  email         String    @unique
+  password_hash String
+  display_name  String
+  created_at    DateTime  @default(now())
+
+  posts    Post[]
+  comments Comment[]
+
+  @@map("users")
+}
+
+model Post {
+  id         String     @id @default(uuid())
+  title      String
+  slug       String     @unique
+  content    String
+  author_id  String
+  status     PostStatus @default(draft)
+  created_at DateTime   @default(now())
+  updated_at DateTime   @updatedAt
+
+  author   User      @relation(fields: [author_id], references: [id], onDelete: Cascade)
+  comments Comment[]
+
+  @@index([slug])
+  @@index([author_id])
+  @@map("posts")
+}
+
+model Comment {
+  id         String   @id @default(uuid())
+  content    String
+  post_id    String
+  author_id  String
+  created_at DateTime @default(now())
+
+  post   Post @relation(fields: [post_id], references: [id], onDelete: Cascade)
+  author User @relation(fields: [author_id], references: [id], onDelete: Cascade)
+
+  @@index([post_id])
+  @@map("comments")
+}
