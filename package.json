@@ -1,6 +1,7 @@
 {
   "name": "production-blog-app",
   "version": "1.0.0",
+  "author": "Noorul Ahamed",
   "private": true,
   "scripts": {
     "dev": "next dev",
