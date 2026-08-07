@@ -31,7 +31,7 @@ A modern, highly-performant publishing platform built for engineering teams. It 
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/hemanthkumar-d/Blog-Poster.git
+   git clone https://github.com/NoorulAhameddev/Blog-Poster.git
    cd Blog-Poster
    ```
 
