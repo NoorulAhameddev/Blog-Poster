@@ -3,8 +3,19 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
-  title: "Engineering Blog | Secure Technical Writing Platform",
-  description: "A production-grade, high-performance publishing platform for developers and engineers.",
+  title: "Engineering Blog | Technical Writing & Systems Publishing",
+  description: "A production-grade, high-performance technical publishing platform built for engineering teams.",
+  openGraph: {
+    title: "Engineering Blog | Technical Writing & Systems Publishing",
+    description: "A production-grade, high-performance technical publishing platform built for engineering teams.",
+    type: "website",
+    locale: "en_US"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Engineering Blog | Technical Writing & Systems Publishing",
+    description: "A production-grade, high-performance technical publishing platform built for engineering teams."
+  }
 };
 
 export default function RootLayout({

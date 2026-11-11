@@ -8,6 +8,7 @@
     "build": "prisma generate && next build",
     "start": "next start",
     "lint": "next lint",
+    "test": "tsx tests/verify-all.ts",
     "db:push": "prisma db push",
     "db:seed": "node --import tsx prisma/seed.ts",
     "postinstall": "prisma generate"
